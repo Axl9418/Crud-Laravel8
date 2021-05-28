@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Item;
+use App\Http\Requests\ItemCreateRequest;
+use App\Http\Requests\ItemEditRequest;
 
 class ItemController extends Controller
 {
@@ -39,8 +41,22 @@ class ItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ItemCreateRequest $request)
     {
+
+        //Validation
+        /*$fields = [
+            'code'=>'required|string|max:10',
+            'description'=>'required|string|max:50',
+            'quantity'=>'required|numeric|min:0|not_in:0',
+            'price'=>'required|numeric|between:1,999.99'
+        ];*/
+
+        //$this->validate($request, $fields);
+
+        //$request->validated();
+
+
         $items = new Item();
 
         $items->code = $request->get('code');
@@ -84,7 +100,7 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ItemEditRequest $request, $id)
     {
         $item = Item::find($id);
 

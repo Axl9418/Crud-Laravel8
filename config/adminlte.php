@@ -238,7 +238,7 @@ return [
             'text'        => 'Items',
             'url'         => 'items',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => CRUD,
+            'label'       => 'CRUD',
             'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
@@ -247,9 +247,9 @@ return [
             'url'  => 'user/profile',
             'icon' => 'far fa-id-card',
         ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
+        /*[
+            'text' => 'change_passwords',
+            'url'  => '',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
@@ -305,7 +305,7 @@ return [
             'text'       => 'information',
             'icon_color' => 'cyan',
             'url'        => '#',
-        ],
+        ],*/
     ],
 
     /*

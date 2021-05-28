@@ -17,7 +17,10 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::resource('items','App\Http\Controllers\ItemController');
+Route::resource('items','App\Http\Controllers\ItemController')->middleware('auth');
+
+//Hiding register and reset password
+//Auth::routes(['register'=>false,'reset'=>false]);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

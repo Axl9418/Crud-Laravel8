@@ -7,7 +7,8 @@
 @stop
 
 @section('content')
-<a href="items/create" class="btn btn-primary mb-3">Create</a>
+<a href="items/create"><i class="fas fa-plus-circle mb-3">Add Item</i></a>
+
 
 <table id="items" class="table table-dark table-striped mt-4">
     <thead class="bg-primary text-white">
@@ -33,7 +34,7 @@
                         @csrf
                         @method('DELETE')
                         <a href="/items/{{$item->id}}/edit" class="btn btn-info">Edit</a>
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" onclick="return confirm('Delete this item?')" class="btn btn-danger">Delete</button>
                     </form>
                 </td>
             </tr>
